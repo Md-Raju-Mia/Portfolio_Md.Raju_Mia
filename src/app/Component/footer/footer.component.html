@@ -1,0 +1,76 @@
+<footer class="main-footer">
+	<div class="main-container">
+		<div class="main-footer__upper">
+			<div class="main-footer__row main-footer__row-1">
+				<h2 class="heading heading-sm main-footer__heading-sm">
+					<span>Social</span>
+				</h2>
+				<div class="main-footer__social-cont">
+					<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/raju-muhammad-se/">
+						<img class="main-footer__icon" src="assets/frontend/png/linkedin-ico.png"
+							alt="Md.Raju Mia Linkedin Profile" />
+					</a>
+					<a target="_blank" rel="noreferrer" href="https://web.facebook.com/md.raju.mia.108698/">
+						<img class="main-footer__icon" src="assets/frontend/png/facebook.png"
+							alt="Md. Raju Mia Github Profile" />
+					</a>
+					<a target="" rel="noreferrer" href="https://wa.me/+8801751843119">
+						<img class="main-footer__icon" src="assets/frontend/png/whatsapp.png"
+							alt="Md. Raju Mia Twitter Profile" />
+					</a>
+
+					<a target="" rel="noreferrer" href="https://github.com/Md-Raju-Mia">
+						<img class="main-footer__icon" src="assets/frontend/png/github-ico.png"
+							alt="Md. Raju Mia Blog Profile" />
+					</a>
+					<a target="" rel="noreferrer" href="mailto:raju.iit3@gmail.com">
+						<img class="main-footer__icon main-footer__icon--mr-none"
+							src="assets/frontend/png/email.png" alt="Md. Raju Mia Youtube Channel" />
+					</a>
+				</div>
+			</div>
+			<div class="main-footer__row main-footer__row-2">
+				<h2 class="heading heading-sm text-lt">Md. Raju Mia</h2>
+				<p class="main-footer__short-desc">
+					Software Engineer | Full Stack (Angular/Spring Boot/Laravel) & Mobile (Android-Java) Developer | Building high-performance, user-driven digital solutions.
+				</p>
+			</div>
+		</div>
+
+		<!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+		<div class="main-footer__lower">
+			&copy; Copyright
+			<script>
+				document.write(new Date().getFullYear());
+			</script>
+			. Made by
+			<a rel="noreferrer" target="_blank" href="https://mdrajumia.com">Md. Raju Mia</a>
+		</div>
+	</div>
+</footer>
+
+<script src="assets/frontend/index.js"></script>
+
+<!-- submit button handle -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+        $('.contact__form').submit(function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Submit the form via AJAX
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    alert(response.message); // Show success message in an alert box
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText); // Log any errors to the console
+                }
+            });
+        });
+    });
+</script>
