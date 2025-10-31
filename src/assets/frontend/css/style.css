@@ -909,3 +909,27 @@ textarea {
 }
 
 
+.about__content-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto);   /* 2 rows */
+    gap: 2rem; /* space between images */
+    justify-items: center; /* center images horizontally */
+    align-items: center;   /* center images vertically */
+}
+
+.about__content-skills .skill-img {
+    width: 100%;
+    max-width: 300px; /* adjust max width of each image */
+    height: auto;
+    border-radius: 5px; /* optional, rounded corners */
+}
+
+@media only screen and (max-width: 56.25em) {
+    .about__content-skills {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+        grid-template-rows: auto;   /* auto rows */
+    }
+}
+
+
